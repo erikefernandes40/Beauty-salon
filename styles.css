@@ -33,8 +33,9 @@ body{
     background-color: var(--body-color);
 }
 
-h1{
+.title{
     font: 700 1.875rem 'Poppins', sans-serif;
+    color: var(--title-color);
 }
 
 .divider-1{
@@ -74,8 +75,12 @@ a{
     text-decoration: none;
 }
 
+ul{
+    list-style: none;
+}
+
 main{
-    margin-top: var(--header-height);
+    margin-top: calc(var(--header-height) + 2rem) ;
 }
 
 nav{
@@ -84,6 +89,45 @@ nav{
     align-items: center;
     justify-content:space-between;
     width: 100%;
+}
+
+nav .menu{
+    opacity: 0;
+    visibility: hidden;
+}
+
+nav.show .menu{
+    opacity: 1;
+    visibility: visible;
+    background-color: var(--body-color);
+    height: 100vh;
+    width: 100vw;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav ul li{
+    text-align: center;
+}
+
+nav ul li a{
+    transition: color 0.2s;
+    position: relative;
+}
+
+nav ul li a:hover{
+    color: var(--base-color);
+}
+
+nav.show ul.grid{
+    gap: 4rem;
+}
+
+nav.show .menu{
+    display: grid;
+    place-content: center;
 }
 
 img{
